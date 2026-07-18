@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <title>Klinik Gigi Sehat | Reservasi Online</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen">
+
+<!-- Navigasi Ringan -->
+<nav class="sticky top-0 z-30 bg-white/80 backdrop-blur-md border-b border-gray-100 px-4 py-3 flex justify-center gap-2">
+  <div class="flex bg-gray-100 rounded-full p-1">
+    <button id="tab-public" class="px-6 py-2 rounded-full text-sm tab-active transition" onclick="switchRole('public')">🏥 Beranda</button>
+    <button id="tab-assistant" class="px-6 py-2 rounded-full text-sm transition" onclick="switchRole('assistant')">👩‍💼 Asisten</button>
+  </div>
+</nav>
+
+<main class="max-w-6xl mx-auto px-4 py-6">
+
+  <!-- ==================== HALAMAN PUBLIK (PASIEN) ==================== -->
+  <div id="public-view" class="animate-in">
+    <!-- HERO SECTION -->
+    <div class="hero-pattern rounded-3xl p-6 md:p-10 mb-10 flex flex-col md:flex-row items-center gap-8">
+      <div class="flex-shrink-0">
+        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-white shadow-xl flex items-center justify-center overflow-hidden border-4 border-white">
+          <!-- Placeholder foto dokter (inisial) -->
+          <span class="text-5xl font-bold text-blue-900">DR</span>
+        </div>
+      </div>
+      <div class="text-center md:text-left">
+        <span class="text-sm font-semibold text-blue-700 bg-blue-50 px-3 py-1 rounded-full">👨‍⚕️ Dokter Gigi Profesional</span>
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mt-3">drg. Rizky, Sp.KG</h1>
+        <p class="text-gray-600 mt-2 max-w-lg">Spesialis Konservasi Gigi dengan pengalaman lebih dari 10 tahun. Memberikan perawatan gigi terbaik dengan teknologi modern dan suasana klinik yang nyaman.</p>
+        <div class="mt-4 flex flex-wrap gap-3 justify-center md:justify-start">
+          <button onclick="document.getElementById('reservasi-section').scrollIntoView({behavior:'smooth'})" class="btn-primary text-sm">📅 Reservasi Sekarang</button>
+          <a href="#profil-dokter" class="bg-white border border-gray-200 text-gray-700 px-5 py-2.5 rounded-full text-sm font-medium hover:bg-gray-50 transition">Lihat Profil</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROFIL DOKTER & INFO KLINIK -->
+    <div id="profil-dokter" class="grid md:grid-cols-2 gap-6 mb-10">
+      <div class="card p-6">
+        <h2 class="text-xl font-bold mb-3 flex items-center gap-2"><span class="text-2xl">🩺</span> Profil Dokter</h2>
+        <ul class="space-y-3 text-sm text-gray-700">
+          <li><strong>Nama:</strong> drg. Rizky Kevin, Sp.KG</li>
+          <li><strong>Spesialisasi:</strong> Konservasi Gigi (Endodontik, Restorasi Estetik)</li>
+          <li><strong>Pengalaman:</strong> 10+ tahun</li>
+          <li><strong>Pendidikan:</strong> Universitas Indonesia, FKG</li>
+          <li><strong>Registrasi:</strong> STR No. 123456789</li>
+        </ul>
+      </div>
+      <div class="card p-6">
+        <h2 class="text-xl font-bold mb-3 flex items-center gap-2"><span class="text-2xl">📍</span> Informasi Klinik</h2>
+        <p class="text-sm text-gray-700"><strong>Jam Buka:</strong> Senin–Sabtu, 08.00–16.00</p>
+        <p class="text-sm text-gray-700 mt-1"><strong>Alamat:</strong> Jl. Kesehatan No. 12, Jakarta Pusat</p>
+        <div class="mt-4 rounded-xl overflow-hidden border border-gray-100">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.4761073036787!2d106.8266333147689!3d-6.175235995527962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5b7a0d1c1b7%3A0x3a2c3c4b5f77c3b!2sMonas!5e0!3m2!1sid!2sid!4v1690000000000" width="100%" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- LAYANAN & FAQ -->
+    <div class="grid md:grid-cols-2 gap-6 mb-10">
+      <div class="card p-6">
+        <h2 class="text-xl font-bold mb-4">🦷 Layanan Unggulan</h2>
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-blue-50 text-blue-800 px-4 py-2 rounded-full text-sm">Konsultasi</span>
+          <span class="bg-blue-50 text-blue-800 px-4 py-2 rounded-full text-sm">Tambal Gigi</span>
+          <span class="bg-blue-50 text-blue-800 px-4 py-2 rounded-full text-sm">Cabut Gigi</span>
+          <span class="bg-blue-50 text-blue-800 px-4 py-2 rounded-full text-sm">Scaling / Karang Gigi</span>
+          <span class="bg-blue-50 text-blue-800 px-4 py-2 rounded-full text-sm">Behel / Ortodonti</span>
+          <span class="bg-blue-50 text-blue-800 px-4 py-2 rounded-full text-sm">Pemutih Gigi</span>
+        </div>
+      </div>
+      <div class="card p-6">
+        <h2 class="text-xl font-bold mb-4">❓ Pertanyaan Umum</h2>
+        <div class="space-y-4 text-sm">
+          <div>
+            <button class="faq-toggle w-full text-left font-medium flex justify-between items-center py-1" onclick="toggleFAQ(this)">Apakah bisa langsung datang? <span class="text-gray-400">+</span></button>
+            <div class="faq-content pl-2 text-gray-600 mt-1">Kami menerima pasien dengan reservasi online untuk mengurangi waktu tunggu. Walk-in tetap dilayani jika slot tersedia.</div>
+          </div>
+          <div>
+            <button class="faq-toggle w-full text-left font-medium flex justify-between items-center py-1" onclick="toggleFAQ(this)">Biaya konsultasi? <span class="text-gray-400">+</span></button>
+            <div class="faq-content pl-2 text-gray-600 mt-1">Konsultasi awal Rp 50.000. Biaya tindakan akan diinformasikan setelah pemeriksaan.</div>
+          </div>
+          <div>
+            <button class="faq-toggle w-full text-left font-medium flex justify-between items-center py-1" onclick="toggleFAQ(this)">Apakah menerima BPJS? <span class="text-gray-400">+</span></button>
+            <div class="faq-content pl-2 text-gray-600 mt-1">Untuk sementara kami belum bekerja sama dengan BPJS, namun menyediakan paket perawatan terjangkau.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM RESERVASI (dengan ID untuk scroll) -->
+    <div id="reservasi-section" class="card p-6 mb-6">
+      <h2 class="text-xl font-bold mb-4">📅 Formulir Reservasi</h2>
+      <form id="reservationForm" class="space-y-5">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Tanggal Kunjungan yang Diinginkan</label>
+          <input type="date" id="apptDate" required class="w-full rounded-xl border-gray-200 bg-gray-50 p-2.5 text-sm focus:ring-2 focus:ring-blue-100 focus:border-blue-300">
+          <p class="mt-2 text-xs text-gray-500">Slot waktu akan ditentukan dan dikonfirmasi oleh admin melalui WhatsApp.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+            <input type="text" id="fullName" required placeholder="Nama Anda" class="w-full rounded-xl border-gray-200 bg-gray-50 p-2.5 text-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">No. WhatsApp</label>
+            <input type="tel" id="whatsapp" required placeholder="62812xxxx" class="w-full rounded-xl border-gray-200 bg-gray-50 p-2.5 text-sm">
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-3 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Usia</label>
+            <input type="number" id="age" min="1" max="120" required class="w-full rounded-xl border-gray-200 bg-gray-50 p-2.5 text-sm">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Jenis Kelamin</label>
+            <select id="gender" required class="w-full rounded-xl border-gray-200 bg-gray-50 p-2.5 text-sm">
+              <option value="">Pilih</option><option>Laki-laki</option><option>Perempuan</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Keluhan Utama</label>
+            <select id="complaint" required class="w-full rounded-xl border-gray-200 bg-gray-50 p-2.5 text-sm">
+              <option value="">Pilih keluhan</option>
+              <option>Konsultasi</option><option>Sakit Gigi</option><option>Karang Gigi</option><option>Cabut Gigi</option><option>Tambal</option><option>Lainnya</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn-primary w-full text-sm" href="wa.me/628813564384">Kirim Permintaan via WhatsApp</button>
+      </form>
+    </div>
+
+    <!-- SUKSES RESERVASI -->
+    <div id="success-view" class="card p-8 text-center hidden animate-in">
+      <div class="text-5xl mb-3">✅</div>
+      <h2 class="text-2xl font-bold text-gray-800">Permintaan Reservasi Terkirim!</h2>
+      <div class="my-6 bg-blue-50 p-5 rounded-2xl inline-block">
+        <p class="text-sm text-blue-800">Konfirmasi Jadwal</p>
+        <p class="text-sm mt-2">Admin akan menentukan slot waktu dan menghubungi Anda melalui WhatsApp.</p>
+      </div>
+      <div class="flex justify-center gap-3 mt-4">
+        <a id="whatsappConfirmLink" href="#" target="_blank" class="bg-green-600 text-white px-5 py-2.5 rounded-full text-sm hover:bg-green-700 transition flex items-center gap-2">
+          💬 Buka WhatsApp
+        </a>
+        <button onclick="resetReservation()" class="bg-white border border-gray-200 text-gray-700 px-5 py-2.5 rounded-full text-sm hover:bg-gray-50 transition">Buat Reservasi Baru</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== DASHBOARD ASISTEN ==================== -->
+  <div id="assistant-view" class="hidden animate-in">
+    <div id="assistant-login" class="max-w-md mx-auto card p-6 mt-10">
+      <h2 class="text-xl font-bold mb-4 text-center">Login Asisten</h2>
+      <input type="email" id="assistEmail" placeholder="asisten@klinik.com" class="w-full p-3 border rounded-xl mb-2 text-sm bg-gray-50">
+      <input type="password" id="assistPass" placeholder="password" class="w-full p-3 border rounded-xl mb-4 text-sm bg-gray-50">
+      <button onclick="loginAssistant()" class="btn-primary w-full text-sm">Masuk</button>
+      <p class="text-xs text-gray-400 mt-3 text-center">demo: asisten@klinik.com / 123</p>
+    </div>
+    <div id="assistant-dashboard" class="hidden">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-bold">📋 Antrian Hari Ini</h2>
+        <div class="flex gap-2">
+          <button onclick="exportData()" class="text-sm bg-white border px-4 py-2 rounded-full hover:bg-gray-50 transition">📥 Unduh CSV</button>
+          <button onclick="logout('assistant')" class="text-sm text-red-500 font-medium">Logout</button>
+        </div>
+      </div>
+      <div class="card overflow-x-auto p-4">
+        <table class="w-full text-sm" id="assistantTable">
+          <thead><tr class="text-left text-gray-500 border-b"><th class="py-2">No Antrian</th><th>Nama</th><th>Slot</th><th>Keluhan</th><th>Status</th><th>Aksi</th></tr></thead>
+          <tbody id="assistantQueueBody"></tbody>
+        </table>
+        <div id="empty-queue" class="text-center py-8 text-gray-400 hidden">Belum ada pasien terdaftar hari ini.</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
