@@ -48,34 +48,6 @@ function toggleFAQ(btn) {
   icon.textContent = content.classList.contains("open") ? "−" : "+";
 }
 
-document
-  .getElementById("reservationForm")
-  .addEventListener("submit", function (e) {
-    e.preventDefault();
-    const date = document.getElementById("apptDate").value;
-    const name = document.getElementById("fullName").value.trim();
-    const wa = document.getElementById("whatsapp").value.trim();
-    const age = document.getElementById("age").value;
-    const gender = document.getElementById("gender").value;
-    const complaint = document.getElementById("complaint").value;
-    if (!date || !name || !wa || !age || !gender || !complaint)
-      return alert("Lengkapi semua field.");
-    document.getElementById("reservasi-section").classList.add("hidden");
-    document.getElementById("success-view").classList.remove("hidden");
-    const msg = `Halo Admin Klinik, saya ingin mengajukan reservasi.\n\nNama: ${name}\nWhatsApp: ${wa}\nUsia: ${age}\nJenis kelamin: ${gender}\nKeluhan: ${complaint}\nTanggal yang diinginkan: ${date}\n\nMohon informasi slot waktu yang tersedia.`;
-    document.getElementById("whatsappConfirmLink").href =
-      `https://wa.me/628813564384?text=${encodeURIComponent(msg)}`;
-    window.open(document.getElementById("whatsappConfirmLink").href, "_blank");
-  });
-
-function resetReservation() {
-  document.getElementById("reservasi-section").classList.remove("hidden");
-  document.getElementById("success-view").classList.add("hidden");
-  document.getElementById("reservationForm").reset();
-  const today = new Date().toISOString().slice(0, 10);
-  document.getElementById("apptDate").value = today;
-}
-
 function loginAssistant() {
   if (
     document.getElementById("assistEmail").value === "asisten@klinik.com" &&
